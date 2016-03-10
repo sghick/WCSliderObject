@@ -12,6 +12,8 @@
 @interface WCSliderView : UIView <
 WCSliderViewDelegate >
 
+@property (strong, nonatomic) NSArray *contentViews;
+
 @property (weak  , nonatomic) id<WCSliderBannarDelegate> sliderBannarDelegate;
 
 @end

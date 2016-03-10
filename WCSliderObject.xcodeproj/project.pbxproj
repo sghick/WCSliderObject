@@ -16,6 +16,9 @@
 		57A3CA441C91882D0066FA21 /* WCSliderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A3CA431C91882D0066FA21 /* WCSliderDelegate.m */; };
 		57A3CA471C91884D0066FA21 /* WCSliderBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A3CA461C91884D0066FA21 /* WCSliderBanner.m */; };
 		57A3CA4A1C9188570066FA21 /* WCSliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A3CA491C9188570066FA21 /* WCSliderView.m */; };
+		57A3CA511C918AD20066FA21 /* V1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A3CA4C1C918AD20066FA21 /* V1ViewController.m */; };
+		57A3CA521C918AD20066FA21 /* V2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A3CA4E1C918AD20066FA21 /* V2ViewController.m */; };
+		57A3CA531C918AD20066FA21 /* V3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A3CA501C918AD20066FA21 /* V3ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,12 @@
 		57A3CA461C91884D0066FA21 /* WCSliderBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCSliderBanner.m; sourceTree = "<group>"; };
 		57A3CA481C9188570066FA21 /* WCSliderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCSliderView.h; sourceTree = "<group>"; };
 		57A3CA491C9188570066FA21 /* WCSliderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCSliderView.m; sourceTree = "<group>"; };
+		57A3CA4B1C918AD20066FA21 /* V1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V1ViewController.h; sourceTree = "<group>"; };
+		57A3CA4C1C918AD20066FA21 /* V1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V1ViewController.m; sourceTree = "<group>"; };
+		57A3CA4D1C918AD20066FA21 /* V2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2ViewController.h; sourceTree = "<group>"; };
+		57A3CA4E1C918AD20066FA21 /* V2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2ViewController.m; sourceTree = "<group>"; };
+		57A3CA4F1C918AD20066FA21 /* V3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V3ViewController.h; sourceTree = "<group>"; };
+		57A3CA501C918AD20066FA21 /* V3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V3ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +81,12 @@
 				57A3CA2E1C9187E50066FA21 /* AppDelegate.m */,
 				57A3CA301C9187E50066FA21 /* ViewController.h */,
 				57A3CA311C9187E50066FA21 /* ViewController.m */,
+				57A3CA4B1C918AD20066FA21 /* V1ViewController.h */,
+				57A3CA4C1C918AD20066FA21 /* V1ViewController.m */,
+				57A3CA4D1C918AD20066FA21 /* V2ViewController.h */,
+				57A3CA4E1C918AD20066FA21 /* V2ViewController.m */,
+				57A3CA4F1C918AD20066FA21 /* V3ViewController.h */,
+				57A3CA501C918AD20066FA21 /* V3ViewController.m */,
 				57A3CA331C9187E50066FA21 /* Main.storyboard */,
 				57A3CA361C9187E50066FA21 /* Assets.xcassets */,
 				57A3CA381C9187E50066FA21 /* LaunchScreen.storyboard */,
@@ -176,6 +191,9 @@
 				57A3CA4A1C9188570066FA21 /* WCSliderView.m in Sources */,
 				57A3CA471C91884D0066FA21 /* WCSliderBanner.m in Sources */,
 				57A3CA441C91882D0066FA21 /* WCSliderDelegate.m in Sources */,
+				57A3CA531C918AD20066FA21 /* V3ViewController.m in Sources */,
+				57A3CA521C918AD20066FA21 /* V2ViewController.m in Sources */,
+				57A3CA511C918AD20066FA21 /* V1ViewController.m in Sources */,
 				57A3CA2F1C9187E50066FA21 /* AppDelegate.m in Sources */,
 				57A3CA2C1C9187E50066FA21 /* main.m in Sources */,
 			);
