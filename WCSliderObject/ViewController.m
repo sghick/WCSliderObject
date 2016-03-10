@@ -67,7 +67,10 @@
 
 - (WCSliderBanner *)sliderBanner {
     if (_sliderBanner == nil) {
-        WCSliderBanner *sliderBanner = [[WCSliderBanner alloc] initWithFrame:self.view.bounds];
+        WCSliderBanner *sliderBanner = [[WCSliderBanner alloc] initWithFrame:CGRectMake(0,
+                                                                                        20,
+                                                                                        CGRectGetWidth(self.view.bounds),
+                                                                                        50)];
         _sliderBanner = sliderBanner;
     }
     return _sliderBanner;
@@ -75,7 +78,10 @@
 
 - (WCSliderView *)sliderView {
     if (_sliderView == nil) {
-        WCSliderView *sliderView = [[WCSliderView alloc] initWithFrame:self.view.bounds];
+        WCSliderView *sliderView = [[WCSliderView alloc] initWithFrame:CGRectMake(0,
+                                                                                  70,
+                                                                                  CGRectGetWidth(self.view.bounds),
+                                                                                  CGRectGetHeight(self.view.bounds) - 70)];
         _sliderView = sliderView;
     }
     return _sliderView;
