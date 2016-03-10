@@ -12,23 +12,30 @@
 @end
 
 
-@protocol WCSliderViewDelegate <NSObject>
+@protocol WCSliderBannarDelegate <NSObject>
 
-@optional
+@required
 // 在回调中实现
-- (void)sliderViewDidSelectedIndex:(NSInteger)index animated:(BOOL)animated;
+
 // 在自身类中实现
-- (void)sliderViewShouldSelectedIndex:(NSInteger)index animated:(BOOL)animated;
+- (void)sliderBannarShouldSelectedIndex:(NSInteger)index animated:(BOOL)animated;
+
+// 在自身类中实现属性
+@property (strong, nonatomic) NSArray *bannarTitles;
 
 @end
 
 
-@protocol WCSliderBannarDelegate <NSObject>
+@protocol WCSliderViewDelegate <NSObject>
 
-@optional
+@required
 // 在回调中实现
-- (void)sliderBannarDidSelectedIndex:(NSInteger)index animated:(BOOL)animated;
+- (void)sliderViewDidSelectedIndex:(NSInteger)index animated:(BOOL)animated;
+
 // 在自身类中实现
-- (void)sliderBannarShouldSelectedIndex:(NSInteger)index animated:(BOOL)animated;
+
+// 在自身类中实现属性
+@property (strong, nonatomic) NSArray *contentViews;
+@property (weak  , nonatomic) id<WCSliderBannarDelegate> sliderBannarDelegate;
 
 @end

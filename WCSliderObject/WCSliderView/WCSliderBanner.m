@@ -33,12 +33,6 @@
     [super layoutSubviews];
 }
 
-- (void)setBannarTitles:(NSArray *)bannarTitles {
-    _bannarTitles = bannarTitles;
-    // 移除原来的View
-    [self removeOldViews];
-}
-
 - (void)removeOldViews {
     
 }
@@ -46,6 +40,12 @@
 #pragma mark - WCSliderBannarDelegate
 - (void)sliderBannarShouldSelectedIndex:(NSInteger)index animated:(BOOL)animated {
     
+}
+
+- (void)setBannarTitles:(NSArray *)bannarTitles {
+    _bannarTitles = bannarTitles;
+    // 移除原来的View
+    [self removeOldViews];
 }
 
 #pragma mark - Getters/Setters

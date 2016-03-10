@@ -14,8 +14,8 @@
 #import "V3ViewController.h"
 @interface ViewController ()
 
-@property (nonatomic,strong) WCSliderBanner *sliderBanner;
-@property (nonatomic,strong) WCSliderView *sliderView;
+@property (nonatomic,strong) UIView<WCSliderBannarDelegate> *sliderBanner;
+@property (nonatomic,strong) UIView<WCSliderViewDelegate> *sliderView;
 
 @end
 
@@ -65,7 +65,7 @@
 }
 
 
-- (WCSliderBanner *)sliderBanner {
+- (UIView<WCSliderBannarDelegate> *)sliderBanner {
     if (_sliderBanner == nil) {
         WCSliderBanner *sliderBanner = [[WCSliderBanner alloc] initWithFrame:CGRectMake(0,
                                                                                         20,
@@ -76,7 +76,7 @@
     return _sliderBanner;
 }
 
-- (WCSliderView *)sliderView {
+- (UIView<WCSliderViewDelegate> *)sliderView {
     if (_sliderView == nil) {
         WCSliderView *sliderView = [[WCSliderView alloc] initWithFrame:CGRectMake(0,
                                                                                   70,

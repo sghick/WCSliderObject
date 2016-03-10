@@ -17,8 +17,16 @@
 @implementation WCSliderView
 
 #pragma mark - WCSliderViewDelegate
-- (void)sliderViewShouldSelectedIndex:(NSInteger)index animated:(BOOL)animated {
+- (void)sliderViewDidSelectedIndex:(NSInteger)index animated:(BOOL)animated {
     
+}
+
+- (void)setContentViews:(NSArray *)contentViews {
+    _contentViews = contentViews;
+}
+
+- (void)setSliderBannarDelegate:(id<WCSliderBannarDelegate>)sliderBannarDelegate {
+    _sliderBannarDelegate = sliderBannarDelegate;
 }
 
 #pragma mark - Getters/Setters
