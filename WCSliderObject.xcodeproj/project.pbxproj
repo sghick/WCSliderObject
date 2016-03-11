@@ -16,14 +16,11 @@
 		57A3CA351C9187E50066FA21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A3CA331C9187E50066FA21 /* Main.storyboard */; };
 		57A3CA371C9187E50066FA21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A3CA361C9187E50066FA21 /* Assets.xcassets */; };
 		57A3CA3A1C9187E50066FA21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A3CA381C9187E50066FA21 /* LaunchScreen.storyboard */; };
-		57A3CA441C91882D0066FA21 /* WCSliderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A3CA431C91882D0066FA21 /* WCSliderDelegate.m */; };
 		57A3CA471C91884D0066FA21 /* WCSliderBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A3CA461C91884D0066FA21 /* WCSliderBanner.m */; };
 		57A3CA4A1C9188570066FA21 /* WCSliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A3CA491C9188570066FA21 /* WCSliderView.m */; };
 		57A3CA511C918AD20066FA21 /* V1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A3CA4C1C918AD20066FA21 /* V1ViewController.m */; };
 		57A3CA521C918AD20066FA21 /* V2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A3CA4E1C918AD20066FA21 /* V2ViewController.m */; };
 		57A3CA531C918AD20066FA21 /* V3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A3CA501C918AD20066FA21 /* V3ViewController.m */; };
-		57A3CA591C918FDC0066FA21 /* WJSliderScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A3CA561C918FDC0066FA21 /* WJSliderScrollView.m */; };
-		57A3CA5A1C918FDC0066FA21 /* WJSliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A3CA581C918FDC0066FA21 /* WJSliderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,8 +40,6 @@
 		57A3CA361C9187E50066FA21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57A3CA391C9187E50066FA21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57A3CA3B1C9187E50066FA21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		57A3CA421C91882D0066FA21 /* WCSliderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCSliderDelegate.h; sourceTree = "<group>"; };
-		57A3CA431C91882D0066FA21 /* WCSliderDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCSliderDelegate.m; sourceTree = "<group>"; };
 		57A3CA451C91884D0066FA21 /* WCSliderBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCSliderBanner.h; sourceTree = "<group>"; };
 		57A3CA461C91884D0066FA21 /* WCSliderBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCSliderBanner.m; sourceTree = "<group>"; };
 		57A3CA481C9188570066FA21 /* WCSliderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCSliderView.h; sourceTree = "<group>"; };
@@ -55,10 +50,6 @@
 		57A3CA4E1C918AD20066FA21 /* V2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2ViewController.m; sourceTree = "<group>"; };
 		57A3CA4F1C918AD20066FA21 /* V3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V3ViewController.h; sourceTree = "<group>"; };
 		57A3CA501C918AD20066FA21 /* V3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V3ViewController.m; sourceTree = "<group>"; };
-		57A3CA551C918FDC0066FA21 /* WJSliderScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJSliderScrollView.h; sourceTree = "<group>"; };
-		57A3CA561C918FDC0066FA21 /* WJSliderScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJSliderScrollView.m; sourceTree = "<group>"; };
-		57A3CA571C918FDC0066FA21 /* WJSliderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJSliderView.h; sourceTree = "<group>"; };
-		57A3CA581C918FDC0066FA21 /* WJSliderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJSliderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +82,6 @@
 		57A3CA291C9187E50066FA21 /* WCSliderObject */ = {
 			isa = PBXGroup;
 			children = (
-				57A3CA541C918FDC0066FA21 /* WJSliderView */,
 				57A3CA411C91880A0066FA21 /* WCSliderView */,
 				57A3CA2D1C9187E50066FA21 /* AppDelegate.h */,
 				57A3CA2E1C9187E50066FA21 /* AppDelegate.m */,
@@ -129,25 +119,12 @@
 		57A3CA411C91880A0066FA21 /* WCSliderView */ = {
 			isa = PBXGroup;
 			children = (
-				57A3CA421C91882D0066FA21 /* WCSliderDelegate.h */,
-				57A3CA431C91882D0066FA21 /* WCSliderDelegate.m */,
 				57A3CA451C91884D0066FA21 /* WCSliderBanner.h */,
 				57A3CA461C91884D0066FA21 /* WCSliderBanner.m */,
 				57A3CA481C9188570066FA21 /* WCSliderView.h */,
 				57A3CA491C9188570066FA21 /* WCSliderView.m */,
 			);
 			path = WCSliderView;
-			sourceTree = "<group>";
-		};
-		57A3CA541C918FDC0066FA21 /* WJSliderView */ = {
-			isa = PBXGroup;
-			children = (
-				57A3CA571C918FDC0066FA21 /* WJSliderView.h */,
-				57A3CA581C918FDC0066FA21 /* WJSliderView.m */,
-				57A3CA551C918FDC0066FA21 /* WJSliderScrollView.h */,
-				57A3CA561C918FDC0066FA21 /* WJSliderScrollView.m */,
-			);
-			path = WJSliderView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,10 +200,7 @@
 				57A3CA321C9187E50066FA21 /* ViewController.m in Sources */,
 				57A3CA4A1C9188570066FA21 /* WCSliderView.m in Sources */,
 				57A3CA471C91884D0066FA21 /* WCSliderBanner.m in Sources */,
-				57A3CA5A1C918FDC0066FA21 /* WJSliderView.m in Sources */,
-				57A3CA441C91882D0066FA21 /* WCSliderDelegate.m in Sources */,
 				57A3CA531C918AD20066FA21 /* V3ViewController.m in Sources */,
-				57A3CA591C918FDC0066FA21 /* WJSliderScrollView.m in Sources */,
 				57A3CA521C918AD20066FA21 /* V2ViewController.m in Sources */,
 				57A3CA511C918AD20066FA21 /* V1ViewController.m in Sources */,
 				57A3CA2F1C9187E50066FA21 /* AppDelegate.m in Sources */,

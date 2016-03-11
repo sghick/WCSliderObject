@@ -10,9 +10,6 @@
 #import "WCSliderBanner.h"
 #import "WCSliderView.h"
 
-#import "WJSliderView.h"
-#import "WJSliderScrollView.h"
-
 #import "V1ViewController.h"
 #import "V2ViewController.h"
 #import "V3ViewController.h"
@@ -39,34 +36,6 @@
     V4ViewController *vc4 = [[V4ViewController alloc] init];
     V5ViewController *vc5 = [[V5ViewController alloc] init];
     V6ViewController *vc6 = [[V6ViewController alloc] init];
-    
-    UIView *view1 = [UIView new];
-    view1.backgroundColor = [UIColor greenColor];
-    UIView *view2 = [UIView new];
-    view2.backgroundColor = [UIColor yellowColor];
-    UIView *view3 = [UIView new];
-    view3.backgroundColor = [UIColor grayColor];
-    
-    UILabel *label1 = [UILabel new];
-    UILabel *label2 = [UILabel new];
-    UILabel *label3 = [UILabel new];
-    UILabel *label4 = [UILabel new];
-    UILabel *label5 = [UILabel new];
-    UILabel *label6 = [UILabel new];
-    
-    label1.text = @"label1";
-    label2.text = @"label2";
-    label3.text = @"label3";
-    label4.text = @"label4";
-    label5.text = @"label5";
-    label6.text = @"label6";
-    
-    label1.textAlignment = NSTextAlignmentCenter;
-    label2.textAlignment = NSTextAlignmentCenter;
-    label3.textAlignment = NSTextAlignmentCenter;
-    label4.textAlignment = NSTextAlignmentCenter;
-    label5.textAlignment = NSTextAlignmentCenter;
-    label6.textAlignment = NSTextAlignmentCenter;
     
     [self.view addSubview:self.sliderBanner];
     [self.view addSubview:self.sliderView];
