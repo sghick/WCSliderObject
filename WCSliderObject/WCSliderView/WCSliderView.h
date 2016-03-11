@@ -7,13 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WCSliderDelegate.h"
 
-@interface WCSliderView : UIView <
-WCSliderViewDelegate >
+@class WCSliderView;
+@protocol WCSliderViewDelegate <NSObject>
+
+@required
+- (void)sliderView:(WCSliderView *)sliderView didSelectedProgress:(CGFloat)progress;
+
+@end
+
+@interface WCSliderView : UIView
 
 @property (strong, nonatomic) NSArray *contentViews;
+@property (weak  , nonatomic) id<WCSliderViewDelegate> delegate;
 
-@property (weak  , nonatomic) id<WCSliderBannarDelegate> sliderBannarDelegate;
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithFrame:(CGRect)frame;
+
+
+- (void)sliderViewShouldSelectedProgress:(CGFloat)progress animated:(BOOL)animated;
 
 @end

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570DF8CC1C92A68400947426 /* V4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 570DF8CB1C92A68400947426 /* V4ViewController.m */; };
+		570DF8CF1C92A69100947426 /* V5ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 570DF8CE1C92A69100947426 /* V5ViewController.m */; };
+		570DF8D21C92A6A000947426 /* V6ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 570DF8D11C92A6A000947426 /* V6ViewController.m */; };
 		57A3CA2C1C9187E50066FA21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A3CA2B1C9187E50066FA21 /* main.m */; };
 		57A3CA2F1C9187E50066FA21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A3CA2E1C9187E50066FA21 /* AppDelegate.m */; };
 		57A3CA321C9187E50066FA21 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A3CA311C9187E50066FA21 /* ViewController.m */; };
@@ -24,6 +27,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		570DF8CA1C92A68400947426 /* V4ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V4ViewController.h; sourceTree = "<group>"; };
+		570DF8CB1C92A68400947426 /* V4ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V4ViewController.m; sourceTree = "<group>"; };
+		570DF8CD1C92A69100947426 /* V5ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V5ViewController.h; sourceTree = "<group>"; };
+		570DF8CE1C92A69100947426 /* V5ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V5ViewController.m; sourceTree = "<group>"; };
+		570DF8D01C92A6A000947426 /* V6ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V6ViewController.h; sourceTree = "<group>"; };
+		570DF8D11C92A6A000947426 /* V6ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V6ViewController.m; sourceTree = "<group>"; };
 		57A3CA271C9187E50066FA21 /* WCSliderObject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WCSliderObject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A3CA2B1C9187E50066FA21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		57A3CA2D1C9187E50066FA21 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -94,6 +103,12 @@
 				57A3CA4E1C918AD20066FA21 /* V2ViewController.m */,
 				57A3CA4F1C918AD20066FA21 /* V3ViewController.h */,
 				57A3CA501C918AD20066FA21 /* V3ViewController.m */,
+				570DF8CA1C92A68400947426 /* V4ViewController.h */,
+				570DF8CB1C92A68400947426 /* V4ViewController.m */,
+				570DF8CD1C92A69100947426 /* V5ViewController.h */,
+				570DF8CE1C92A69100947426 /* V5ViewController.m */,
+				570DF8D01C92A6A000947426 /* V6ViewController.h */,
+				570DF8D11C92A6A000947426 /* V6ViewController.m */,
 				57A3CA331C9187E50066FA21 /* Main.storyboard */,
 				57A3CA361C9187E50066FA21 /* Assets.xcassets */,
 				57A3CA381C9187E50066FA21 /* LaunchScreen.storyboard */,
@@ -127,10 +142,10 @@
 		57A3CA541C918FDC0066FA21 /* WJSliderView */ = {
 			isa = PBXGroup;
 			children = (
-				57A3CA551C918FDC0066FA21 /* WJSliderScrollView.h */,
-				57A3CA561C918FDC0066FA21 /* WJSliderScrollView.m */,
 				57A3CA571C918FDC0066FA21 /* WJSliderView.h */,
 				57A3CA581C918FDC0066FA21 /* WJSliderView.m */,
+				57A3CA551C918FDC0066FA21 /* WJSliderScrollView.h */,
+				57A3CA561C918FDC0066FA21 /* WJSliderScrollView.m */,
 			);
 			path = WJSliderView;
 			sourceTree = "<group>";
@@ -215,6 +230,9 @@
 				57A3CA521C918AD20066FA21 /* V2ViewController.m in Sources */,
 				57A3CA511C918AD20066FA21 /* V1ViewController.m in Sources */,
 				57A3CA2F1C9187E50066FA21 /* AppDelegate.m in Sources */,
+				570DF8CF1C92A69100947426 /* V5ViewController.m in Sources */,
+				570DF8CC1C92A68400947426 /* V4ViewController.m in Sources */,
+				570DF8D21C92A6A000947426 /* V6ViewController.m in Sources */,
 				57A3CA2C1C9187E50066FA21 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,6 +382,7 @@
 				57A3CA401C9187E50066FA21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

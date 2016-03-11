@@ -12,7 +12,7 @@
 @interface WJSliderScrollView ()<UIScrollViewDelegate,WJSliderViewDelegate>
 
 @property (nonatomic,strong)UIScrollView *scrollView;
-@property (nonatomic,strong)WJSliderView *sliderView;
+//@property (nonatomic,strong)WJSliderView *sliderView;
 
 @property (nonatomic,assign)NSInteger arrayCount;
 @property (nonatomic,assign)BOOL shoulScroll;
@@ -22,7 +22,7 @@
 
 - (UIScrollView *)scrollView {
     if (!_scrollView) {
-        self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, self.sliderView.frame.size.height, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds)-self.sliderView.frame.size.height)];
+        self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds))];
         self.scrollView.pagingEnabled = YES;
         self.scrollView.delegate = self;
         self.scrollView.showsHorizontalScrollIndicator = NO;
@@ -43,15 +43,12 @@
 - (void)commonInitWithItemArray:(NSArray<UIView *> *)itemArray contentArray:(NSArray<UIView *>*)contentArray {
     self.arrayCount = itemArray.count;
     
-    self.sliderView = [[WJSliderView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.bounds), 50) Array:itemArray];
-//    self.sliderView.delegate = self;
-    self.sliderView.sliderViewDelegate = self;
-    self.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.bounds)*itemArray.count, CGRectGetHeight(self.bounds)-self.sliderView.frame.size.height);
+    self.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.bounds)*itemArray.count, CGRectGetHeight(self.bounds));
     [contentArray enumerateObjectsUsingBlock:^(UIView * _Nonnull view, NSUInteger idx, BOOL * _Nonnull stop) {
         view.frame = CGRectMake(idx*CGRectGetWidth(self.bounds), 0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds));
         [self.scrollView addSubview:view];
     }];
-    [self addSubview:self.sliderView];
+
     [self addSubview:self.scrollView];
 }
 
@@ -59,9 +56,8 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat f = scrollView.contentOffset.x/self.bounds.size.width;
-    self.sliderView.indexProgress = f;
-    if ([self.sliderView respondsToSelector:@selector(sliderBannarShouldSelectedIndex:animated:)]) {
-        [self.sliderView sliderBannarShouldSelectedIndex:f animated:YES];
+    if ([self.sliderBannarDelegate respondsToSelector:@selector(sliderBannarShouldSelectedIndex:animated:)]) {
+        [self.sliderBannarDelegate sliderBannarShouldSelectedIndex:f animated:YES];
     }
 }
 
@@ -75,6 +71,26 @@
 #pragma mark - WCSliderBannarDelegate
 - (void)sliderViewDidSelectedIndex:(NSInteger)index animated:(BOOL)animated {
     [self.scrollView setContentOffset:CGPointMake(index*CGRectGetWidth(self.bounds), self.scrollView.contentOffset.y) animated:animated];
+}
+
+- (void)sliderBannarShouldSelectedIndex:(NSInteger)index animated:(BOOL)animated {
+    [self.scrollView setContentOffset:CGPointMake(index*CGRectGetWidth(self.bounds), self.scrollView.contentOffset.y) animated:animated];
+}
+
+- (void)setContentViews:(NSArray *)contentViews {
+    if (_contentViews) {
+        return;
+    }
+    _contentViews = contentViews;
+    self.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.bounds)*contentViews.count,
+                                             CGRectGetHeight(self.bounds));
+    [contentViews enumerateObjectsUsingBlock:^(UIView * _Nonnull view, NSUInteger idx, BOOL * _Nonnull stop) {
+        view.frame = CGRectMake(idx*CGRectGetWidth(self.bounds),
+                                0,
+                                CGRectGetWidth(self.bounds),
+                                CGRectGetHeight(self.bounds));
+        [self.scrollView addSubview:view];
+    }];
 }
 
 @end

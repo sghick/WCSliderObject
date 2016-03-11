@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "WCSliderDelegate.h"
 
-@interface WJSliderScrollView : UIView <WCSliderViewDelegate>
+@interface WJSliderScrollView : UIView <WCSliderDelegate>
+
+@property (strong, nonatomic) NSArray *contentViews;
+@property (weak  , nonatomic) id<WCSliderDelegate> sliderBannarDelegate;
 
 - (instancetype)initWithFrame:(CGRect)frame itemArray:(NSArray<UIView *> *)itemArray contentArray:(NSArray<UIView *>*)contentArray;
 

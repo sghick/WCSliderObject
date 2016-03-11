@@ -17,7 +17,7 @@
 
 @end
 
-@interface WJSliderView : UIView<WCSliderBannarDelegate>
+@interface WJSliderView : UIView<WCSliderDelegate>
 
 @property (nonatomic,assign)CGFloat indexProgress;
 
@@ -25,7 +25,8 @@
 
 @property (nonatomic,assign)id<WJSliderViewDelegate>delegate;
 
-@property (nonatomic,weak  )id<WCSliderViewDelegate>sliderViewDelegate;
+@property (strong, nonatomic) NSArray *bannarTitles;
+@property (weak  , nonatomic) id<WCSliderDelegate> sliderViewDelegate;
 
 
 @end

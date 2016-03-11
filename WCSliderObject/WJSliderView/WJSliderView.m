@@ -71,8 +71,8 @@
     if (_delegate && [_delegate respondsToSelector:@selector(WJSliderViewDidIndex:)]) {
         [_delegate WJSliderViewDidIndex:self.index];
     }
-    if ([self.sliderViewDelegate respondsToSelector:@selector(sliderViewDidSelectedIndex:animated:)]) {
-        [self.sliderViewDelegate sliderViewDidSelectedIndex:self.index animated:YES];
+    if ([self.sliderViewDelegate respondsToSelector:@selector(sliderBannarShouldSelectedIndex:animated:)]) {
+        [self.sliderViewDelegate sliderBannarShouldSelectedIndex:self.index animated:YES];
     }
 }
 
@@ -84,6 +84,11 @@
 
 - (void)sliderBannarShouldSelectedIndex:(NSInteger)index animated:(BOOL)animated {
     self.indexProgress = index;
+}
+
+- (void)setBannarTitles:(NSArray *)bannarTitles {
+    _bannarTitles = bannarTitles;
+    [self commonInitWithArray:bannarTitles];
 }
 
 @end
