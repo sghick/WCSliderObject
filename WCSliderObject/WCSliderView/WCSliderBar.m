@@ -97,11 +97,11 @@ UIScrollViewDelegate >
     if ((index < self.contentViews.count) && (index >= 0)) {
         UIButton *btn = self.contentViews[index];
         if (toSelected) {
-            btn.titleLabel.font = [UIFont systemFontOfSize:18];
-            [btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-        } else {
             btn.titleLabel.font = [UIFont boldSystemFontOfSize:24];
             [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        } else {
+            btn.titleLabel.font = [UIFont systemFontOfSize:18];
+            [btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         }
     }
 }
