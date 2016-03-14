@@ -12,7 +12,7 @@
 @protocol WCSliderViewDelegate <NSObject>
 
 @required
-- (void)sliderView:(WCSliderView *)sliderView didSelectedProgress:(CGFloat)progress;
+- (void)sliderView:(WCSliderView *)sliderView didScrollToProgress:(CGFloat)progress;
 
 @end
 

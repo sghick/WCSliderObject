@@ -1,15 +1,15 @@
 //
-//  WCSliderBanner.m
+//  WCSliderBar.m
 //  WCSliderObject
 //
-//  Created by buding on 16/3/10.
+//  Created by buding on 16/3/14.
 //  Copyright © 2016年 buding. All rights reserved.
 //
 
-#import "WCSliderBanner.h"
+#import "WCSliderBar.h"
 
-@interface WCSliderBanner () <
-    UIScrollViewDelegate >
+@interface WCSliderBar () <
+UIScrollViewDelegate >
 
 @property (strong, nonatomic) UIScrollView *scrollView;
 @property (assign, nonatomic) NSInteger selectedIndex;
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation WCSliderBanner
+@implementation WCSliderBar
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -76,28 +76,34 @@
 - (void)btnAction:(UIButton *)sender {
     NSInteger selectedIndex = [self.contentViews indexOfObject:sender];
     [self refreshTitlesWithProgress:selectedIndex animated:NO];
-    if ([self.delegate respondsToSelector:@selector(sliderBannar:didSelectedProgress:)]) {
-        [self.delegate sliderBannar:self didSelectedProgress:selectedIndex];
+    if ([self.delegate respondsToSelector:@selector(sliderBar:didSelectedIndex:)]) {
+        [self.delegate sliderBar:self didSelectedIndex:selectedIndex];
     }
 }
 
 - (void)refreshTitlesWithProgress:(CGFloat)progress animated:(BOOL)animated {
     if (progress == (NSInteger)progress) {
         if (self.selectedIndex != progress) {
-            UIButton *lastBtn = self.contentViews[self.selectedIndex];
-            UIButton *curBtn = self.contentViews[(NSInteger)progress];
-            
-            lastBtn.titleLabel.font = [UIFont systemFontOfSize:18];
-            [lastBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-            
-            curBtn.titleLabel.font = [UIFont boldSystemFontOfSize:24];
-            [curBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            
+            [self refreshItemWithIndex:self.selectedIndex toSelected:NO];
+            [self refreshItemWithIndex:(NSInteger)progress toSelected:YES];
             [self checkAndScrollBannarAtCenterWithProgress:progress];
             self.selectedIndex = progress;
         }
     }
     self.lastProgress = progress;
+}
+
+- (void)refreshItemWithIndex:(NSInteger)index toSelected:(BOOL)toSelected {
+    if ((index < self.contentViews.count) && (index >= 0)) {
+        UIButton *btn = self.contentViews[index];
+        if (toSelected) {
+            btn.titleLabel.font = [UIFont systemFontOfSize:18];
+            [btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        } else {
+            btn.titleLabel.font = [UIFont boldSystemFontOfSize:24];
+            [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        }
+    }
 }
 
 - (void)checkAndScrollBannarAtCenterWithProgress:(CGFloat)progress {
@@ -129,19 +135,19 @@
 #pragma mark - UIScrollViewDelegate
 
 #pragma mark - Public
-- (void)sliderBannarShouldSelectedProgress:(CGFloat)progress animated:(BOOL)animated {
+- (void)sliderBarShouldScrollToProgress:(CGFloat)progress animated:(BOOL)animated {
     [self refreshTitlesWithProgress:progress animated:animated];
 }
 
-- (void)setBannarTitles:(NSArray *)bannarTitles {
+- (void)setItemTitles:(NSArray *)itemTitles {
     [self removeOldViews];
-    _bannarTitles = bannarTitles;
-    [self addContentViews:[self contentViewsWithTitles:bannarTitles]];
+    _itemTitles = itemTitles;
+    [self addContentViews:[self contentViewsWithTitles:itemTitles]];
 }
 
 - (void)setItemWidth:(CGFloat)itemWidth {
     _itemWidth = itemWidth;
-    self.bannarTitles = _bannarTitles;
+    self.itemTitles = _itemTitles;
 }
 
 #pragma mark - Getters/Setters

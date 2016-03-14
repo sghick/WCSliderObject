@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "WCSliderBanner.h"
+#import "WCSliderBar.h"
 #import "WCSliderView.h"
 
 #import "V1ViewController.h"
@@ -17,10 +17,10 @@
 #import "V5ViewController.h"
 #import "V6ViewController.h"
 @interface ViewController () <
-    WCSliderBannarDelegate,
+    WCSliderBarDelegate,
     WCSliderViewDelegate >
 
-@property (nonatomic,strong) WCSliderBanner *sliderBanner;
+@property (nonatomic,strong) WCSliderBar *sliderBar;
 @property (nonatomic,strong) WCSliderView *sliderView;
 
 @end
@@ -37,34 +37,34 @@
     V5ViewController *vc5 = [[V5ViewController alloc] init];
     V6ViewController *vc6 = [[V6ViewController alloc] init];
     
-    [self.view addSubview:self.sliderBanner];
+    [self.view addSubview:self.sliderBar];
     [self.view addSubview:self.sliderView];
     
-    self.sliderBanner.bannarTitles = @[@"label1", @"label2", @"label3", @"label4", @"label5", @"label6"];
-    self.sliderBanner.itemWidth = CGRectGetWidth(self.view.bounds)/4.0;
+    self.sliderBar.itemTitles = @[@"label1", @"label2", @"label3", @"label4", @"label5", @"label6"];
+    self.sliderBar.itemWidth = CGRectGetWidth(self.view.bounds)/4.0;
     self.sliderView.contentViews = @[vc1.view, vc2.view, vc3.view, vc4.view, vc5.view, vc6.view];
 }
 
 #pragma mark - WCSliderBannarDelegate, WCSliderBannarDelegate
-- (void)sliderBannar:(WCSliderBanner *)sliderBannar didSelectedProgress:(CGFloat)progress {
-    [self.sliderView sliderViewShouldSelectedProgress:progress animated:NO];
+- (void)sliderBar:(WCSliderBar *)sliderBar didSelectedIndex:(NSInteger)index {
+    [self.sliderView sliderViewShouldSelectedProgress:index animated:NO];
 }
 
-- (void)sliderView:(WCSliderView *)sliderView didSelectedProgress:(CGFloat)progress {
-    [self.sliderBanner sliderBannarShouldSelectedProgress:progress animated:NO];
+- (void)sliderView:(WCSliderView *)sliderView didScrollToProgress:(CGFloat)progress {
+    [self.sliderBar sliderBarShouldScrollToProgress:progress animated:NO];
 }
 
 #pragma mark - Getters/Setters
-- (WCSliderBanner *)sliderBanner {
-    if (_sliderBanner == nil) {
-        WCSliderBanner *sliderBanner = [[WCSliderBanner alloc] initWithFrame:CGRectMake(0,
+- (WCSliderBar *)sliderBar {
+    if (_sliderBar == nil) {
+        WCSliderBar *sliderBar = [[WCSliderBar alloc] initWithFrame:CGRectMake(0,
                                                                                         20,
                                                                                         CGRectGetWidth(self.view.bounds),
                                                                                         50)];
-        sliderBanner.delegate = self;
-        _sliderBanner = sliderBanner;
+        sliderBar.delegate = self;
+        _sliderBar = sliderBar;
     }
-    return _sliderBanner;
+    return _sliderBar;
 }
 
 - (WCSliderView *)sliderView {

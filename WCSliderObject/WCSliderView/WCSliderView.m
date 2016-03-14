@@ -56,8 +56,8 @@
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat progress = scrollView.contentOffset.x/self.bounds.size.width;
-    if ([self.delegate respondsToSelector:@selector(sliderView:didSelectedProgress:)]) {
-        [self.delegate sliderView:self didSelectedProgress:progress];
+    if ([self.delegate respondsToSelector:@selector(sliderView:didScrollToProgress:)]) {
+        [self.delegate sliderView:self didScrollToProgress:progress];
     }
 }
 
