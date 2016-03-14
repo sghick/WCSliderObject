@@ -40,8 +40,8 @@
     [self.view addSubview:self.sliderBar];
     [self.view addSubview:self.sliderView];
     
+    self.sliderBar.itemWidth = CGRectGetWidth(self.view.bounds)/5.0;
     self.sliderBar.itemTitles = @[@"label1", @"label2", @"label3", @"label4", @"label5", @"label6"];
-    self.sliderBar.itemWidth = CGRectGetWidth(self.view.bounds)/4.0;
     self.sliderView.contentViews = @[vc1.view, vc2.view, vc3.view, vc4.view, vc5.view, vc6.view];
 }
 

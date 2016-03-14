@@ -28,11 +28,18 @@ UIScrollViewDelegate >
 }
 
 - (void)createSubviews {
+    // default
+    _selectedFont = [UIFont boldSystemFontOfSize:24];
+    _selectedTextColor = [UIColor blackColor];
+    _normalFont = [UIFont systemFontOfSize:18];
+    _normalTextColor = [UIColor grayColor];
+    
     [self addSubview:self.scrollView];
 }
 
 - (void)layoutSubviews {
     self.scrollView.frame = self.bounds;
+    [self refreshItems];
     [super layoutSubviews];
 }
 
@@ -67,8 +74,8 @@ UIScrollViewDelegate >
 - (UIView *)viewWithTitle:(NSString *)title {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setTitle:title forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    btn.titleLabel.font = [UIFont systemFontOfSize:18];
+    btn.titleLabel.font = self.normalFont;
+    [btn setTitleColor:self.normalTextColor forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
     return btn;
 }
@@ -97,11 +104,11 @@ UIScrollViewDelegate >
     if ((index < self.contentViews.count) && (index >= 0)) {
         UIButton *btn = self.contentViews[index];
         if (toSelected) {
-            btn.titleLabel.font = [UIFont boldSystemFontOfSize:24];
-            [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            btn.titleLabel.font = self.selectedFont;
+            [btn setTitleColor:self.selectedTextColor forState:UIControlStateNormal];
         } else {
-            btn.titleLabel.font = [UIFont systemFontOfSize:18];
-            [btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+            btn.titleLabel.font = self.normalFont;
+            [btn setTitleColor:self.normalTextColor forState:UIControlStateNormal];
         }
     }
 }
@@ -139,15 +146,40 @@ UIScrollViewDelegate >
     [self refreshTitlesWithProgress:progress animated:animated];
 }
 
-- (void)setItemTitles:(NSArray *)itemTitles {
+- (void)refreshItems {
     [self removeOldViews];
+    [self addContentViews:[self contentViewsWithTitles:self.itemTitles]];
+    [self refreshItemWithIndex:0 toSelected:YES];
+}
+
+- (void)setItemTitles:(NSArray *)itemTitles {
     _itemTitles = itemTitles;
-    [self addContentViews:[self contentViewsWithTitles:itemTitles]];
+    [self setNeedsLayout];
 }
 
 - (void)setItemWidth:(CGFloat)itemWidth {
     _itemWidth = itemWidth;
-    self.itemTitles = _itemTitles;
+    [self setNeedsLayout];
+}
+
+- (void)setNormalFont:(UIFont *)normalFont {
+    _normalFont = normalFont;
+    [self setNeedsLayout];
+}
+
+- (void)setNormalTextColor:(UIColor *)normalTextColor {
+    _normalTextColor = normalTextColor;
+    [self setNeedsLayout];
+}
+
+- (void)setSelectedFont:(UIFont *)selectedFont {
+    _selectedFont = selectedFont;
+    [self setNeedsLayout];
+}
+
+- (void)setSelectedTextColor:(UIColor *)selectedTextColor {
+    _selectedTextColor = selectedTextColor;
+    [self setNeedsLayout];
 }
 
 #pragma mark - Getters/Setters

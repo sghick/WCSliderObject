@@ -19,8 +19,16 @@
 @interface WCSliderBar : UIView
 
 @property (strong, nonatomic) NSArray *itemTitles;
-@property (assign, nonatomic) CGFloat itemWidth;
 @property (strong, nonatomic) NSArray *contentViews;
+
+@property (assign, nonatomic) CGFloat itemWidth;
+
+@property (strong, nonatomic) UIFont *normalFont;
+@property (strong, nonatomic) UIColor *normalTextColor;
+
+@property (strong, nonatomic) UIFont *selectedFont;
+@property (strong, nonatomic) UIColor *selectedTextColor;
+
 @property (weak  , nonatomic) id<WCSliderBarDelegate> delegate;
 
 - (instancetype)init NS_UNAVAILABLE;
