@@ -58,9 +58,9 @@
 - (WCSliderBar *)sliderBar {
     if (_sliderBar == nil) {
         WCSliderBar *sliderBar = [[WCSliderBar alloc] initWithFrame:CGRectMake(0,
-                                                                                        20,
-                                                                                        CGRectGetWidth(self.view.bounds),
-                                                                                        50)];
+                                                                               20,
+                                                                               CGRectGetWidth(self.view.bounds),
+                                                                               50)];
         sliderBar.delegate = self;
         _sliderBar = sliderBar;
     }
