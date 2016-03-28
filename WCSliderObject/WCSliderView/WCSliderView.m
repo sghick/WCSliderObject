@@ -40,7 +40,7 @@
     }
 }
 
-- (void)addContentViews:(NSArray *)contentViews {
+- (void)addScrollContentViews:(NSArray *)contentViews {
     self.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.bounds)*contentViews.count, CGRectGetHeight(self.bounds));
     int idx = 0;
     for (UIView *view in contentViews) {
@@ -70,7 +70,21 @@
 - (void)setContentViews:(NSArray *)contentViews {
     [self removeOldViews];
     _contentViews = contentViews;
-    [self addContentViews:contentViews];
+    [self addScrollContentViews:contentViews];
+}
+
+- (void)addContentViews:(NSArray *)views {
+    self.contentViews = views;
+}
+
+- (void)addContentViewControllers:(NSArray<UIViewController *> *)viewControllers
+             atRootViewController:(UIViewController *)rootViewController {
+    NSMutableArray *views = [NSMutableArray array];
+    for (UIViewController *subVC in viewControllers) {
+        [rootViewController addChildViewController:subVC];
+        [views addObject:subVC.view];
+    }
+    self.contentViews = views;
 }
 
 #pragma mark - Getters/Setters

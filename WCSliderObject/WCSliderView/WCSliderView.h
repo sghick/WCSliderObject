@@ -19,11 +19,17 @@
 @interface WCSliderView : UIView
 
 @property (strong, nonatomic) NSArray *contentViews;
+
 @property (weak  , nonatomic) id<WCSliderViewDelegate> delegate;
 
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithFrame:(CGRect)frame;
 
+/** 常规的view */
+- (void)addContentViews:(NSArray *)views;
+/** 加载viewController */
+- (void)addContentViewControllers:(NSArray<UIViewController *> *)viewControllers
+             atRootViewController:(UIViewController *)rootViewController;
 
 - (void)sliderViewShouldSelectedProgress:(CGFloat)progress animated:(BOOL)animated;
 

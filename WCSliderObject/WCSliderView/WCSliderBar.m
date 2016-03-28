@@ -29,9 +29,10 @@ UIScrollViewDelegate >
 
 - (void)createSubviews {
     // default
-    _selectedFont = [UIFont boldSystemFontOfSize:24];
+    _itemWidth = 50;
+    _selectedFont = [UIFont systemFontOfSize:15];
     _selectedTextColor = [UIColor blackColor];
-    _normalFont = [UIFont systemFontOfSize:18];
+    _normalFont = [UIFont systemFontOfSize:14];
     _normalTextColor = [UIColor grayColor];
     
     [self addSubview:self.scrollView];
